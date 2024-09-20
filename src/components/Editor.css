@@ -1,0 +1,20 @@
+.editor .title {
+  font-size: 25px;
+  background-color: #dfe2ea;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+.editor .content {
+  font-size: 20px;
+  background-color: #e8edff;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  width: 600px;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 200px;
+  max-height: 400px;
+  margin-bottom: 50px;
+}
