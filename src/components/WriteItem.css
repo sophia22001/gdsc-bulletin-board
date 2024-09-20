@@ -1,0 +1,28 @@
+.writeItem {
+  background-color: #e8edff;
+  width: 600px;
+  height: 150px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.writeItem .title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.writeItem .content {
+  font-size: 20px;
+  color: #918d8d;
+  margin-bottom: 20px;
+}
+.writeItem .button {
+  display: flex;
+  align-items: center;
+}
+.writeItem .date {
+  color: #918d8d;
+}
