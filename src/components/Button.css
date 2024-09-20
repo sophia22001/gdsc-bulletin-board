@@ -1,0 +1,18 @@
+.Button {
+  background-color: #dfe2ea;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 17px;
+  font-size: 17px;
+}
+.Button_POSITIVE {
+  background-color: rgb(149, 255, 152);
+}
+.Button_NEGATIVE {
+  background-color: #ff7676;
+  color: white;
+}
+.Button_EDIT {
+  background-color: #809bff;
+  color: white;
+}
