@@ -1,0 +1,14 @@
+html,
+body {
+  margin: 0px;
+  width: 100%;
+  background-color: rgb(243, 235, 226);
+}
+#root {
+  padding: 0 50px;
+  background-color: white;
+  width: 600px;
+  min-height: 100vh;
+  height: 100%;
+  margin: 0 auto;
+}
