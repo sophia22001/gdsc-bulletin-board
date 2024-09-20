@@ -1,10 +1,12 @@
 import "./ThreeButton.css";
 
 import Button from "./Button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ThreeButton = ({ id }) => {
+  const params = useParams();
   const nav = useNavigate();
+  id = params.id;
   return (
     <div className="ThreeButton">
       <Button onClick={() => nav("/")} text={"글 목록"} />
