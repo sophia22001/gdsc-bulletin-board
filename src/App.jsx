@@ -52,6 +52,7 @@ function App() {
       type: "CREATE",
       data: {
         id: idRef.current++,
+        title,
         createdDate,
         content,
       },
@@ -62,6 +63,7 @@ function App() {
       type: "UPDATE",
       data: {
         id,
+        title,
         newDate,
         content,
       },
@@ -70,22 +72,11 @@ function App() {
   const onDelete = (id) => {
     dispatch({
       type: "DELETE",
-
       id,
     });
   };
   return (
     <>
-      <button onClick={() => onCreate(new Date().getTime(), "추가된 글 내용")}>
-        글 추가하기
-      </button>
-      <button
-        onClick={() => onUpdate(1, new Date().getTime(), "수정된 글 내용")}
-      >
-        글 수정하기
-      </button>
-      <button onClick={() => onDelete(1)}>글 삭제하기</button>
-
       <StateContext.Provider value={data}>
         <DispatchContext.Provider
           value={{
