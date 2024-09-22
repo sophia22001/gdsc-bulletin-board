@@ -1,0 +1,35 @@
+.detail-editor .title {
+  font-size: 25px;
+  background-color: #dfe2ea;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 40px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.detail-editor .content {
+  font-size: 20px;
+  background-color: #e8edff;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  width: 600px;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 200px;
+  max-height: 400px;
+  margin-bottom: 10px;
+}
+.detail-editor .created-date {
+  display: flex;
+  align-items: center;
+}
+.detail-editor .ThreeButton {
+  position: fixed; /* 화면에 고정 */
+  bottom: 30px; /* 화면 맨 아래에 붙임 */
+
+  width: 600px; /* 버튼을 화면 전체 너비로 설정 */
+  display: flex; /* 플렉스박스를 사용해 정렬 */
+  justify-content: space-between; /* 버튼을 양옆 끝에 배치 */
+}
