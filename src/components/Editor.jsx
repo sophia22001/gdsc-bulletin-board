@@ -1,15 +1,17 @@
 import "./Editor.css";
 import ThreeButton from "./ThreeButton";
-import TwoButton from "./TwoButton";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
-const Editor = () => {
+const Editor = ({ onSubmit }) => {
   //입력 값을 저장하는 input state
   const [input, setInput] = useState({
     title: "",
     createdDate: new Date().toLocaleDateString(),
     content: "",
   });
+  const nav = useNavigate();
 
   //이벤트 핸들러
   const onChangeInput = (e) => {
@@ -20,6 +22,11 @@ const Editor = () => {
       ...input,
       [name]: value,
     });
+  };
+
+  const onClickSubmit = () => {
+    onSubmit(input);
+    nav("/");
   };
   return (
     <div className="editor">
@@ -37,8 +44,12 @@ const Editor = () => {
       />
 
       <div className="created-date">
-        <p>생성 날짜: &nbsp;</p>
+        <p>날짜: &nbsp;</p>
         <div>{new Date().toLocaleDateString()}</div>
+      </div>
+      <div className="TwoButton">
+        <Button text={"글 목록"} onClick={() => nav("/")} />
+        <Button onClick={onClickSubmit} text={"완료하기"} type={"POSITIVE"} />
       </div>
     </div>
   );
