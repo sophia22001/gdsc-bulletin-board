@@ -4,6 +4,9 @@
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 40px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 .editor .content {
   font-size: 20px;
@@ -16,5 +19,9 @@
   resize: vertical;
   min-height: 200px;
   max-height: 400px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+}
+.editor .created-date {
+  display: flex;
+  align-items: center;
 }
