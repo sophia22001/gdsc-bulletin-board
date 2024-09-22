@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "../components/Button";
 import Editor from "../components/Editor";
 import Header from "../components/Header";
 import { useContext } from "react";
