@@ -20,7 +20,11 @@ const WriteItem = ({ id, title, content, createdDate, newDate }) => {
       <div className="Info" onClick={() => nav(`/detail/${id}`)}>
         <div className="title">{title}</div>
         <div className="content">{content}</div>
-        <div className="date">생성: 2022.09.08 / 수정: 2024.10.10</div>
+        <div className="date">
+          {newDate === ""
+            ? `생성: ${createdDate} `
+            : `생성: ${createdDate} / 수정: ${newDate}`}
+        </div>
       </div>
 
       <div className="button">
