@@ -3,29 +3,14 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "./Button";
 import { useContext } from "react";
-import { DispatchContext } from "../App";
+import { DispatchContext, StateContext } from "../App";
 
-const DetailEditor = () => {
+const DetailEditor = ({ createdDate, newDate, title, content }) => {
   const { onDelete } = useContext(DispatchContext);
-  //입력 값을 저장하는 input state
-  const [input, setInput] = useState({
-    title: "",
-    createdDate: new Date().toLocaleDateString(),
-    content: "",
-  });
+  const data = useContext(StateContext);
+
   const nav = useNavigate();
   const params = useParams();
-
-  //이벤트 핸들러
-  const onChangeInput = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
-    console.log(name, value);
-    setInput({
-      ...input,
-      [name]: value,
-    });
-  };
 
   const onClickDelete = () => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
@@ -36,22 +21,13 @@ const DetailEditor = () => {
 
   return (
     <div className="detail-editor">
-      <input
-        onChange={onChangeInput}
-        name="title"
-        value={input.title}
-        className="title"
-      />
-      <textarea
-        onChange={onChangeInput}
-        name="content"
-        value={input.content}
-        className="content"
-      />
+      <div className="title">{title}</div>
+      <div className="content">{content}</div>
 
       <div className="created-date">
-        <p>날짜: &nbsp;</p>
-        <div>{new Date().toLocaleDateString()}</div>
+        <p>생성: &nbsp;</p>
+        <div>{createdDate}</div>
+        <p>{newDate ? <span>&nbsp;/ 수정: &nbsp;{newDate}</span> : ""}</p>
       </div>
       <div className="ThreeButton">
         <Button onClick={() => nav("/")} text={"글 목록"} />
