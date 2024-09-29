@@ -12,15 +12,19 @@ const mockData = [
   {
     id: 1,
     title: "1번 제목",
-    createdDate: new Date().toLocaleDateString(),
-    newDate: new Date().toLocaleDateString(),
+    createdDate:
+      new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+    newDate:
+      new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
     content: "1번 일기 내용",
   },
   {
     id: 2,
     title: "2번 제목",
-    createdDate: new Date().toLocaleDateString(),
-    newDate: new Date().toLocaleDateString(),
+    createdDate:
+      new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+    newDate:
+      new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
     content: "2번 일기 내용",
   },
 ];
@@ -47,23 +51,26 @@ function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
-  const onCreate = (title, createdDate, content) => {
+  const onCreate = (title, createdDate, newDate, content) => {
     dispatch({
       type: "CREATE",
       data: {
         id: idRef.current++,
         title,
         createdDate,
+        newDate,
         content,
       },
     });
   };
-  const onUpdate = (id, title, newDate, content) => {
+  const onUpdate = (id, title, createdDate, newDate, content) => {
     dispatch({
       type: "UPDATE",
       data: {
         id,
         title,
+        createdDate: data.find((item) => String(item.id) === String(id))
+          .createdDate,
         newDate,
         content,
       },
