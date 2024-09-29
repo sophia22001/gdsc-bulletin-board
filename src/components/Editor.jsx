@@ -1,13 +1,16 @@
 import "./Editor.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
-const Editor = ({ onSubmit }) => {
+const Editor = ({ onSubmit, initData }) => {
   //입력 값을 저장하는 input state
   const [input, setInput] = useState({
     title: "",
-    createdDate: new Date().toLocaleDateString(),
+    createdDate:
+      new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+    newDate:
+      new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
     content: "",
   });
   const nav = useNavigate();
@@ -24,9 +27,27 @@ const Editor = ({ onSubmit }) => {
   };
 
   const onClickSubmit = () => {
-    onSubmit(input);
+    // setInput({
+    //   ...input,
+    //   newDate: new Date().toLocaleTimeString(),
+    // });
+    const updatedInput = {
+      ...input,
+      newDate:
+        new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+    };
+    onSubmit(updatedInput);
     nav("/");
   };
+
+  useEffect(() => {
+    if (initData) {
+      setInput({
+        ...initData,
+      });
+    }
+  }, [initData]);
+
   return (
     <div className="editor">
       <input
@@ -43,8 +64,14 @@ const Editor = ({ onSubmit }) => {
       />
 
       <div className="created-date">
-        <p>날짜: &nbsp;</p>
-        <div>{new Date().toLocaleDateString()}</div>
+        <p>생성: &nbsp;</p>
+        <div>
+          {initData ? initData.createdDate || "날짜 없음" : "로딩 중..."}
+        </div>
+        <p>&nbsp;/ 수정: &nbsp;</p>
+        <div>
+          {initData ? initData.newDate || "수정 날짜 없음" : "로딩 중..."}
+        </div>
       </div>
       <div className="TwoButton">
         <Button text={"글 목록"} onClick={() => nav("/")} />
