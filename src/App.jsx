@@ -15,7 +15,7 @@ const mockData = [
     createdDate:
       new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
     newDate: "",
-    content: "1번 일기 내용",
+    content: "1번 글 내용",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const mockData = [
     createdDate:
       new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
     newDate: "",
-    content: "2번 일기 내용",
+    content: "2번 글 내용",
   },
 ];
 
