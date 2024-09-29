@@ -2,7 +2,7 @@ html,
 body {
   margin: 0px;
   width: 100%;
-  background-color: rgb(243, 235, 226);
+  background-color: #d8dbd8;
 }
 #root {
   padding: 0 50px;
