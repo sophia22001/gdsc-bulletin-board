@@ -12,15 +12,15 @@ const mockData = [
   {
     id: 1,
     title: "1번 제목",
-    createdDate: new Date().getTime(),
-    newDate: new Date().getTime(),
+    createdDate: new Date().toLocaleDateString(),
+    newDate: new Date().toLocaleDateString(),
     content: "1번 일기 내용",
   },
   {
     id: 2,
     title: "2번 제목",
-    createdDate: new Date().getTime(),
-    newDate: new Date().getTime(),
+    createdDate: new Date().toLocaleDateString(),
+    newDate: new Date().toLocaleDateString(),
     content: "2번 일기 내용",
   },
 ];
