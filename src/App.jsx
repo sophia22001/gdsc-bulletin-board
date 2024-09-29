@@ -14,8 +14,7 @@ const mockData = [
     title: "1번 제목",
     createdDate:
       new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
-    newDate:
-      new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+    newDate: "",
     content: "1번 일기 내용",
   },
   {
@@ -23,8 +22,7 @@ const mockData = [
     title: "2번 제목",
     createdDate:
       new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
-    newDate:
-      new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+    newDate: "",
     content: "2번 일기 내용",
   },
 ];
