@@ -1,8 +1,0 @@
-.ThreeButton {
-  position: fixed; /* 화면에 고정 */
-  bottom: 30px; /* 화면 맨 아래에 붙임 */
-
-  width: 600px; /* 버튼을 화면 전체 너비로 설정 */
-  display: flex; /* 플렉스박스를 사용해 정렬 */
-  justify-content: space-between; /* 버튼을 양옆 끝에 배치 */
-}
