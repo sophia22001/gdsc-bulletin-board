@@ -8,7 +8,8 @@ const New = () => {
   const { onCreate } = useContext(DispatchContext);
 
   const onSubmit = (input) => {
-    onCreate(input.title, input.createdDate, input.content);
+    input.newDate = "";
+    onCreate(input.title, input.createdDate, input.newDate, input.content);
   };
 
   return (
