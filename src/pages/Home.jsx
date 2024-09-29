@@ -7,7 +7,7 @@ const Home = () => {
   const data = useContext(StateContext);
   return (
     <div>
-      <Header title={"전체 글 보기"} />
+      <Header title={"🤍게시판🤍"} />
       <WriteList data={data} />
     </div>
   );
